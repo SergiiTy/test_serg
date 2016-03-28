@@ -1,0 +1,11 @@
+*.war
+*.ear
+*.class
+
+/training/extensioninfo.xsd
+/training/classes
+/training/gensrc
+/training/build.xml
+/training/resources/beans.xsd
+/training/resources/items.xsd
+/training/fileAbsolutePath
