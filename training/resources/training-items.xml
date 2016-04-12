@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2000-2013 hybris AG
+ All rights reserved.
+
+ This software is the confidential and proprietary information of hybris
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with hybris.
+
+  
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="items.xsd">
+
+<relations>
+    <relation code="CustomerOrganisationRelation" localized="false" generate="true" autocreate="true">
+	<deployment table="CustToOrgRelation" typecode="10124" />
+       <sourceElement type="Customer" qualifier="Customer" cardinality="many" />
+       <targetElement type="Organisation" qualifier="Organisation" cardinality="many"/>
+    </relation>
+</relations> 
+
+	   <itemtypes>
+	        <itemtype code="Customer" generate="false" autocreate="false">
+	            <attributes>
+	                <attribute qualifier="status" type="java.lang.Boolean" >
+			  <description>Indicates if account is locked or not</description>
+			  <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+			 <defaultvalue>"false"</defaultvalue>
+	                </attribute>
+	                <attribute qualifier="attemptCount" type="java.lang.Integer">
+	                    <description>Indicates how many times user entered incorrect password</description>
+	                    <persistence type="property" />
+						<modifiers optional="false" unique="true"/>
+	                </attribute>
+	            </attributes>
+	        </itemtype>
+
+	        <itemtype code="Organisation" generate="true" autocreate="true">
+	          <deployment table="Organisation" typecode="10123" />
+	            <attributes>
+	                <attribute qualifier="id" type="java.lang.Integer" >
+			  <description>not a PK</description>
+	                    <persistence type="property"/>
+	                    <modifiers optional="false" unique="true"/>
+	                </attribute>
+	                <attribute qualifier="field" type="java.lang.String">
+	                    <description>Contains localized values</description>
+	                    <modifiers optional="false" unique="true"/>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="phone" type="java.lang.String">
+	                    <description></description>
+	                    <modifiers optional="false" unique="true"/>
+	                    <persistence type="property" />
+	                </attribute>
+	                <attribute qualifier="email" type="java.lang.String">
+	                    <description></description>
+	                    <modifiers optional="false" unique="true"/>
+	                    <persistence type="property" />
+	                </attribute>
+	            </attributes>
+	        </itemtype>
+	    </itemtypes>
+
+</items>
+
