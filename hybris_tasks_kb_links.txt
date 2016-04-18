@@ -1,0 +1,74 @@
+work dependency:
+
+1. #1 setup clean b2c accelerator engine (don't initialize)
+2. #7 generate taining accelerator extantions by ant mogulegen plugin
+3. #2 generate training extention by ant extgen plugin (folder should be located under custom/training folder)
+initialize system
+4. #6 create new model by editing -items.xml file
+5. #8 modify HMC view by creating ...hmc extention by ant extgen and setup it dependencies with training extention.
+6. #10 add dynamic model attibute
+ant clean all
+update system
+########################################################################################
+#import do idea
+https://wiki.hybris.com/display/hybrisALF/Import+a+Project+using+Intellij+IDEA
+########################################################################################
+
+###6 Data Model
+
+##items.xml documentation
+https://wiki.hybris.com/display/release5/items.xml+-+5.1.1
+https://wiki.hybris.com/display/release5/items.xml+Element+Reference
+
+##new model
+#example
+https://wiki.hybris.com/display/R5T/Trail+~+New+Data+Model
+
+#GUI
+https://wiki.hybris.com/display/R5T/Trail+~+Populating+the+Data+Model
+
+#gen info
+https://wiki.hybris.com/display/release5/Models
++++NOTE: only -items.xml change
+########################################################################################
+
+###10 Dynamic attributes
+#example
+https://wiki.hybris.com/display/R5T/Trail+~+Dynamic+Model+Attributes
+https://wiki.hybris.com/display/release5/How+To+Create+Dynamic+Attributes+-+Tutorial#HowToCreateDynamicAttributes-Tutorial-ImplementtheDynamicAttributeHandler
+https://wiki.hybris.com/display/release5/Dynamic+Attributes
+
++++NOTE: -items.xml change, create next classes: model, attribute handler(bus.logic), test. Register jbaen in -spring.xml. Add dyn.attr. to hmc view by editing hmc.xml.
+########################################################################################
+
+###8 HMC View
+
+#documentation
+https://wiki.hybris.com/display/release5/hMC+Access+Rights
+
+#GUI
+https://wiki.hybris.com/display/release5/Configuring+the+hMC+Interface
+
+#example
+https://wiki.hybris.com/display/tr51/Trail+~+Integration+in+the+hMC
+
++++NOTE: -local.proreties, create new extention(extgen), create hmc module by editing extensioninfo.xml, add hmc java class
+########################################################################################
+
+###9 Use ImpEx
+
+#documentation
+https://wiki.hybris.com/display/release5/ImpEx+Syntax
+https://wiki.hybris.com/display/release5/ImpEx+API
+
+#GUI
+https://wiki.hybris.com/display/release5/ImpEx+-+User+Guide
+
+#example impex simple files
+https://wiki.hybris.com/display/R5T/Trail+~+Populating+the+Data+Model
+
+#example csv files and scripts
+https://wiki.hybris.com/display/R5T/Hot+Folder
+
++++NOTE: - create hot-folder-.....-spring.xml by using same default file and add parsing and uodate rules, add dependency to -spring.xml, create csv files and place to fotfolder in order begining from files without relation.
+########################################################################################
