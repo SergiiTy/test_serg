@@ -1,0 +1,54 @@
+work dependency:
+
+1. #11 lock user after 3 unseccessfull attempts
+2. #13 customize backoffice NG cockpit to user to edit org and cust.
+3. #14 add mail config
+4. #
+5. #
+6. #
+
+ant clean all
+update system
+########################################################################################
+
+###11 Login handler
+
+##job done
+ - Amend LoginPage controller and 
+
+##
+only in gitHub
+#
+
+
+########################################################################################
+
+###13 cokcpit view
+
+##job done
+
+- xml file created
+
+##
+#
+
+
+########################################################################################
+###14 Mail service
+
+##job done
+- local.properties -  added mail config
+- extensioninfo.xml - added acc.serv. extensioninfo
+- ...-spring.xml - added 4 beans (organizationDao, mailService, emailService (def.class), sendemailjob)
+				 - added properties - mail props.
+				 
+- java classes:  - int OrgDao +  class defaultOrgDao
+				 - sendemailjob
+				 - mailservice + amended orgModelService
+- tests:        - 3 new test + 1 amendment				 
+
+##
+#
+
+
+########################################################################################
